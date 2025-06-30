@@ -64,6 +64,14 @@ Key: `edge-routine`
 
 Website: [https://www.alibabacloud.com/help/en/dynamic-route-for-cdn/latest/er-overview](https://www.alibabacloud.com/help/en/dynamic-route-for-cdn/latest/er-overview)
 
+## Arvancloud Edge Computing ## {#arvancloud}
+
+The JavaScript runtime that powers Arvancloud Edge Computing.
+
+Key: `arvancloud`
+
+Website: [https://www.arvancloud.ir/en/products/edge-computing](https://www.arvancloud.ir/en/products/edge-computing)
+
 ## Azion - Edge Functions ## {#azion}
 
 Azion Edge Functions for ultra-low latency, edge-native applications, built with open standards for secure, high-performance serverless computing.
