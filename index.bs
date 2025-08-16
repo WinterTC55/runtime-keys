@@ -100,6 +100,16 @@ Website: [https://deno.com](https://deno.com)
 
 Repository: [https://github.com/denoland/deno](https://github.com/denoland/deno)
 
+## Fabrice Bellard - QuickJS ## {#quickjs}
+
+QuickJS is a small and embeddable Javascript engine.
+
+Key: \`quickjs\`
+
+Website: [https://bellard.org/quickjs/](https://bellard.org/quickjs/)
+
+Repository: [https://github.com/bellard/quickjs](https://github.com/bellard/quickjs)
+
 ## Lagon - Lagon Runtime ## {#lagon}
 
 Lagon is an open-source runtime and platform that allows developers to run TypeScript and JavaScript Functions at the Edge.
