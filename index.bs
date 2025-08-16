@@ -130,6 +130,16 @@ Website: [https://www.moddable.com/](https://www.moddable.com/)
 
 Repository: [https://github.com/Moddable-OpenSource/moddable](https://github.com/Moddable-OpenSource/moddable)
 
+## Mozilla - Rhino ## {#rhino}
+
+Rhino is an open-source implementation of JavaScript written entirely in Java.
+
+Key: `rhino`
+
+Website: [https://rhino.github.io/](https://rhino.github.io/)
+
+Repository: [https://github.com/mozilla/rhino](https://github.com/mozilla/rhino)
+
 ## Netlify - Edge Functions ## {#netlify}
 
 Edge Functions connect the Netlify platform and workflow with an open runtime standard at the network edge.
