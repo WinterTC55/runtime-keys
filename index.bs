@@ -170,6 +170,16 @@ Website: [https://bun.sh/](https://bun.sh/)
 
 Repository: [https://github.com/oven-sh/bun](https://github.com/oven-sh/bun)
 
+## QuickJS-NG - QuickJS-NG ## {#quickjs-ng}
+
+A fork of the original QuickJS project by Fabrice Bellard and Charlie Gordon.
+
+Key: `quickjs-ng`
+
+Website: [https://quickjs-ng.github.io/quickjs/](https://quickjs-ng.github.io/quickjs/)
+
+Repository: [https://github.com/quickjs-ng/quickjs](https://github.com/quickjs-ng/quickjs)
+
 ## React - Server Components ## {#react-server}
 
 Used by React Server Components.
