@@ -221,6 +221,16 @@ Website: [https://wasmer.io/products/edge](https://wasmer.io/products/edge)
 
 Repository: [https://github.com/wasmerio/winterjs](https://github.com/wasmerio/winterjs)
 
+## Andromeda ## {#andromeda}
+
+A modern, fast, and secure JavaScript & TypeScript runtime built from the ground up in Rust 🦀 and powered by Nova Engine and Oxc.
+
+Key: `kiesel`
+
+Website: [https://kiesel.dev/](https://kiesel.dev/)
+
+Repository: [https://codeberg.org/kiesel-js/runtime](https://codeberg.org/kiesel-js/runtime)
+
 <!--
 ## <Runtime Name> ## {#<Runtime Key>}
 
