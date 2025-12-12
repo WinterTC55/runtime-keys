@@ -80,16 +80,6 @@ Key: `azion`
 
 Website: [https://www.azion.com/en/products/edge-functions/](https://www.azion.com/en/products/edge-functions/)
 
-## Convex - Convex Runtime ## {#convex}
-
-The JavaScript runtime used to execute deterministic Query and Mutation Functions as well as nondeterministic Action Functions in the Convex backend platform.
-
-Key: `convex`
-
-Website: [https://docs.convex.dev/functions/runtimes#default-convex-runtime](https://docs.convex.dev/functions/runtimes#default-convex-runtime)
-
-Repository: [https://github.com/get-convex/convex-backend](https://github.com/get-convex/convex-backend)
-
 ## Cloudflare - workerd ## {#workerd}
 
 The JavaScript / WebAssembly runtime that powers Cloudflare Workers.
@@ -99,6 +89,16 @@ Key: `workerd`
 Website: [https://workers.cloudflare.com/](https://workers.cloudflare.com/)
 
 Repository: [https://github.com/cloudflare/workerd](https://github.com/cloudflare/workerd)
+
+## Convex - Convex Runtime ## {#convex}
+
+The JavaScript runtime used to execute deterministic Query and Mutation Functions as well as nondeterministic Action Functions in the Convex backend platform.
+
+Key: `convex`
+
+Website: [https://docs.convex.dev/functions/runtimes#default-convex-runtime](https://docs.convex.dev/functions/runtimes#default-convex-runtime)
+
+Repository: [https://github.com/get-convex/convex-backend](https://github.com/get-convex/convex-backend)
 
 ## Deno Land - Deno ## {#deno}
 
