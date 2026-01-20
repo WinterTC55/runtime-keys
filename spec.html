@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+  <script src="https://tc39.es/ecmarkup/js/menu.js"></script>
+  <link rel="stylesheet" href="https://tc39.es/ecmarkup/css/elements.css">
+  <title>Runtime Keys</title>
+  <style>
+    pre code { white-space: pre; }
+  </style>
+</head>
+<body>
+  <pre class="metadata">
+  title: Runtime Keys
+  status: draft
+  location: https://github.com/WinterTC55/runtime-keys
+  contributors: WinterTC55
+  </pre>
+  <emu-clause id="sec-scope">
+    <h1>Scope</h1>
+    <p>This Technical Report defines a registry of runtime keys for JavaScript runtime environments.</p>
+
+    <emu-clause id="sec-description">
+      <h1>Description</h1>
+      <p>A <dfn>runtime key</dfn> is a unique string identifier that represents a specific JavaScript runtime environment. Runtime keys provide a standardized mechanism for identifying JavaScript runtimes in a variety of contexts, including but not limited to project configuration files, package manifests, conditional exports, and runtime detection mechanisms. These keys are meant to particularly represent server environments. Browsers should still be generally referenced by other mechanisms such as the browserslist project.</p>
+
+      <p>This specification defines:</p>
+      <ul>
+        <li>The registry of runtime keys and associated metadata</li>
+        <li>The normative requirements for runtime keys</li>
+        <li>The governance process for adding and modifying registry entries</li>
+      </ul>
+
+      <emu-note>
+        <p>This specification does not define <em>how</em> runtime keys should be used by tools or libraries. The purpose of this registry is to prevent conflicts and provide a reliable, authoritative source of runtime identifiers that the community can build tooling around.</p>
+      </emu-note>
+
+      <emu-note>
+        <p>Inclusion in this registry does not imply that the specified runtime is conformant with any WinterTC specification, including the Minimum Common API. Inclusion does not imply endorsement of any kind.</p>
+      </emu-note>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-clause id="sec-conformance">
+    <h1>Conformance</h1>
+    <p>This document is a Technical Report and does not define conformance requirements for implementations. The registry defined herein is informative and provides a canonical list of runtime keys for use by the JavaScript ecosystem.</p>
+  </emu-clause>
+
+  <emu-clause id="sec-normative-references">
+    <h1>Normative References</h1>
+    <p>There are no normative references.</p>
+  </emu-clause>
+
+  <emu-clause id="sec-runtime-key-requirements">
+    <h1>Runtime Key Requirements</h1>
+
+    <emu-clause id="sec-key-format">
+      <h1>Key Format</h1>
+      <p>A runtime key must satisfy the following requirements:</p>
+      <ul>
+        <li>It must be a string value</li>
+        <li>It must be usable in common configuration formats such as JSON and YAML</li>
+        <li>It must meaningfully represent the associated runtime environment</li>
+        <li>It must be simple and unambiguous</li>
+      </ul>
+
+      <emu-note>
+        <p>Future versions of this specification may define a formal grammar for allowable characters in runtime keys.</p>
+      </emu-note>
+    </emu-clause>
+
+    <emu-clause id="sec-key-uniqueness">
+      <h1>Key Uniqueness</h1>
+      <p>A runtime key must not conflict with:</p>
+      <ul>
+        <li>Any other existing runtime key in this registry</li>
+        <li>Existing Browserslist browser entries (excludes references to server runtimes within Browserslist)</li>
+      </ul>
+    </emu-clause>
+
+    <emu-clause id="sec-key-naming-guidelines">
+      <h1>Key Naming Guidelines</h1>
+      <p>Runtime keys are subject to expert review by WinterTC members. Keys should:</p>
+      <ul>
+        <li>Avoid being too similar to existing keys</li>
+        <li>Avoid similarity to common English words or offensive terms</li>
+        <li>Avoid being too generic or similar to general terminology such as "Web Runtimes", "Edge Runtimes", or "JavaScript Runtimes"</li>
+        <li>Demonstrate reasonable specificity and clarity</li>
+      </ul>
+    </emu-clause>
+
+    <emu-clause id="sec-runtime-existence">
+      <h1>Runtime Existence Requirement</h1>
+      <p>The runtime environment represented by a key must actually exist, whether as open source, source-available, or proprietary software. Registry entries exist to identify real runtimes, not to reserve names for future projects.</p>
+
+      <emu-note>
+        <p>A runtime should demonstrate "proof of use" before being added to the registry. Examples include usage in package.json exports fields, published documentation, or active community adoption.</p>
+      </emu-note>
+    </emu-clause>
+
+    <emu-clause id="sec-runtime-metadata">
+      <h1>Runtime Metadata</h1>
+      <p>Each runtime key entry includes the following metadata:</p>
+      <ul>
+        <li><strong>Organization</strong> (required): The organization or individual responsible for the runtime</li>
+        <li><strong>Name</strong> (required): The human-readable name of the runtime</li>
+        <li><strong>Key</strong> (required): The unique string identifier</li>
+        <li><strong>Description</strong> (required): A brief description of the runtime</li>
+        <li><strong>Website</strong> (optional): The primary website for the runtime</li>
+        <li><strong>Repository</strong> (optional): The source code repository URL, if available</li>
+        <li><strong>Deprecated</strong> (required): A boolean indicating whether the key is deprecated</li>
+      </ul>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-clause id="sec-runtime-registry">
+    <h1>Runtime Key Registry</h1>
+    <p>The following table lists all registered runtime keys, sorted alphabetically by Organization.</p>
+
+    <emu-note>
+      <p>This section is generated from the machine-readable registry data (see <emu-xref href="#sec-machine-readable-registry"></emu-xref>). In the build process, this content should be dynamically generated from <code>runtime-keys.json</code>.</p>
+    </emu-note>
+
+    <emu-table id="table-runtime-keys" caption="Registered Runtime Keys">
+      <table>
+        <thead>
+          <tr>
+            <th>Organization</th>
+            <th>Name</th>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Website</th>
+            <th>Repository</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alibaba Cloud</td>
+            <td>edge-routine</td>
+            <td><code>edge-routine</code></td>
+            <td>The JavaScript/Webassembly runtime that powers Alibaba Cloud edge-routine.</td>
+            <td><a href="https://www.alibabacloud.com/help/en/dynamic-route-for-cdn/latest/er-overview">Website</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Arvancloud</td>
+            <td>Edge Computing</td>
+            <td><code>arvancloud</code></td>
+            <td>The JavaScript runtime that powers Arvancloud Edge Computing.</td>
+            <td><a href="https://www.arvancloud.ir/en/products/edge-computing">Website</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Azion</td>
+            <td>Edge Functions</td>
+            <td><code>azion</code></td>
+            <td>Azion Edge Functions for ultra-low latency, edge-native applications, built with open standards for secure, high-performance serverless computing.</td>
+            <td><a href="https://www.azion.com/en/products/edge-functions/">Website</a></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td>workerd</td>
+            <td><code>workerd</code></td>
+            <td>The JavaScript / WebAssembly runtime that powers Cloudflare Workers.</td>
+            <td><a href="https://workers.cloudflare.com/">Website</a></td>
+            <td><a href="https://github.com/cloudflare/workerd">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Deno Land</td>
+            <td>Deno</td>
+            <td><code>deno</code></td>
+            <td>A modern runtime for JavaScript and TypeScript.</td>
+            <td><a href="https://deno.com">Website</a></td>
+            <td><a href="https://github.com/denoland/deno">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td>JavaScript on Compute@Edge</td>
+            <td><code>fastly</code></td>
+            <td>JavaScript runtime for Fastly Compute@Edge.</td>
+            <td><a href="https://developer.fastly.com/learning/compute/javascript/">Website</a></td>
+            <td><a href="https://github.com/fastly/js-compute-runtime">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Kiesel</td>
+            <td>Kiesel</td>
+            <td><code>kiesel</code></td>
+            <td>A JavaScript engine and runtime written in Zig.</td>
+            <td><a href="https://kiesel.dev/">Website</a></td>
+            <td><a href="https://codeberg.org/kiesel-js/runtime">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Lagon</td>
+            <td>Lagon Runtime</td>
+            <td><code>lagon</code></td>
+            <td>Lagon is an open-source runtime and platform that allows developers to run TypeScript and JavaScript Functions at the Edge.</td>
+            <td><a href="https://lagon.app">Website</a></td>
+            <td><a href="https://github.com/lagonapp/lagon">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Meta</td>
+            <td>React Native</td>
+            <td><code>react-native</code></td>
+            <td>A framework for building native apps using React. This key represents supported React Native JS runtimes on native platforms (excludes react-native-web).</td>
+            <td><a href="https://reactnative.dev/">Website</a></td>
+            <td><a href="https://github.com/facebook/react-native">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Moddable</td>
+            <td>Moddable SDK</td>
+            <td><code>moddable</code></td>
+            <td>Open source runtime for resource-constrained embedded devices using standard JavaScript and TypeScript. Supports standard ECMA-419 APIs.</td>
+            <td><a href="https://www.moddable.com/">Website</a></td>
+            <td><a href="https://github.com/Moddable-OpenSource/moddable">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Netlify</td>
+            <td>Edge Functions</td>
+            <td><code>netlify</code></td>
+            <td>Edge Functions connect the Netlify platform and workflow with an open runtime standard at the network edge.</td>
+            <td><a href="https://docs.netlify.com/edge-functions/overview/">Website</a></td>
+            <td><a href="https://github.com/netlify/edge-functions">Repository</a></td>
+          </tr>
+          <tr>
+            <td>OpenJS Foundation</td>
+            <td>Electron</td>
+            <td><code>electron</code></td>
+            <td>Build cross-platform desktop apps with JavaScript, HTML, and CSS.</td>
+            <td><a href="https://www.electronjs.org/">Website</a></td>
+            <td><a href="https://github.com/electron/electron">Repository</a></td>
+          </tr>
+          <tr>
+            <td>OpenJS Foundation</td>
+            <td>Node.js</td>
+            <td><code>node</code></td>
+            <td>Node.js is an open-source, cross-platform JavaScript runtime environment.</td>
+            <td><a href="https://nodejs.org">Website</a></td>
+            <td><a href="https://github.com/nodejs/node">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Oven</td>
+            <td>Bun</td>
+            <td><code>bun</code></td>
+            <td>Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.</td>
+            <td><a href="https://bun.sh/">Website</a></td>
+            <td><a href="https://github.com/oven-sh/bun">Repository</a></td>
+          </tr>
+          <tr>
+            <td>React</td>
+            <td>Server Components</td>
+            <td><code>react-server</code></td>
+            <td>Used by React Server Components.</td>
+            <td><a href="https://react.dev/">Website</a></td>
+            <td><a href="https://github.com/facebook/react">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Vercel</td>
+            <td>Edge Light</td>
+            <td><code>edge-light</code></td>
+            <td>Developing, testing, and defining the runtime Web APIs for Edge infrastructure.</td>
+            <td><a href="https://edge-runtime.vercel.app/">Website</a></td>
+            <td><a href="https://github.com/vercel/edge-runtime">Repository</a></td>
+          </tr>
+          <tr>
+            <td>Wasmer</td>
+            <td>Wasmer Edge</td>
+            <td><code>wasmer</code></td>
+            <td>The JavaScript runtime that brings JavaScript to Wasmer Edge.</td>
+            <td><a href="https://wasmer.io/products/edge">Website</a></td>
+            <td><a href="https://github.com/wasmerio/winterjs">Repository</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </emu-table>
+  </emu-clause>
+
+  <emu-clause id="sec-governance">
+    <h1>Governance and Modification Process</h1>
+
+    <emu-clause id="sec-adding-entries">
+      <h1>Adding Registry Entries</h1>
+      <p>All JavaScript runtimes are welcome to propose a key for inclusion in this registry, subject to the requirements specified in <emu-xref href="#sec-runtime-key-requirements"></emu-xref>. Runtime entries in this registry are encouraged, but not required, to participate in WinterTC.</p>
+
+      <emu-clause id="sec-proposal-process">
+        <h1>Proposal Process</h1>
+        <emu-alg>
+          1. The proposer creates a pull request in the runtime-keys repository.
+          1. The pull request must add the runtime entry to the machine-readable registry data file (<code>runtime-keys.json</code>).
+          1. The entry must include all required metadata fields as specified in <emu-xref href="#sec-runtime-metadata"></emu-xref>.
+          1. The entry must be inserted in alphabetical order by Organization.
+          1. The pull request must be reviewed by WinterTC members.
+          1. At least two WinterTC members not directly affiliated with the proposed runtime must approve the pull request.
+          1. The pull request must be formally approved at a WinterTC plenary meeting before merging.
+          1. After plenary approval, designated editors merge the pull request and update the published registry.
+        </emu-alg>
+      </emu-clause>
+
+      <emu-clause id="sec-expert-review">
+        <h1>Expert Review</h1>
+        <p>All proposed entries undergo expert review to ensure compliance with the naming guidelines specified in <emu-xref href="#sec-key-naming-guidelines"></emu-xref> and other requirements. Reviewers evaluate whether:</p>
+        <ul>
+          <li>The proposed key is appropriately specific and non-generic</li>
+          <li>The runtime has demonstrated proof of use or adoption</li>
+          <li>The key does not conflict with existing entries or Browserslist identifiers</li>
+          <li>The metadata is complete and accurate</li>
+        </ul>
+      </emu-clause>
+    </emu-clause>
+
+    <emu-clause id="sec-modifying-entries">
+      <h1>Modifying Registry Entries</h1>
+
+      <emu-clause id="sec-metadata-modification">
+        <h1>Metadata Modification</h1>
+        <p>Modifications to runtime metadata (organization, name, description, website, or repository) follow the same process as adding entries:</p>
+        <emu-alg>
+          1. The proposer creates a pull request modifying the entry in <code>runtime-keys.json</code>.
+          1. At least two WinterTC members not affiliated with the runtime must approve the pull request.
+          1. The modification must be formally approved at a WinterTC plenary meeting.
+          1. After plenary approval, designated editors merge the pull request.
+        </emu-alg>
+      </emu-clause>
+
+      <emu-clause id="sec-key-immutability">
+        <h1>Key Immutability</h1>
+        <p>To prevent breaking existing tools and configurations that depend on runtime keys, <strong>runtime keys are immutable</strong> and must not be modified except in extraordinary circumstances requiring plenary consensus.</p>
+      </emu-clause>
+
+      <emu-clause id="sec-deprecation">
+        <h1>Deprecation</h1>
+        <p>Runtime keys may be deprecated to indicate that a runtime project is inactive or discontinued. To deprecate a key:</p>
+        <emu-alg>
+          1. The proposer creates a pull request setting the `deprecated` field to `true` in <code>runtime-keys.json</code>.
+          1. The pull request follows the standard approval process.
+          1. After plenary approval and merge, the key is marked as deprecated in the published registry.
+        </emu-alg>
+
+        <p>Deprecated keys may be undeprecated if the original runtime project resumes activity, following the same approval process. Implementations should not add support for deprecated keys.</p>
+
+        <emu-note>
+          <p>Deprecated keys remain in the registry to preserve historical information and prevent reuse that could cause confusion.</p>
+        </emu-note>
+      </emu-clause>
+    </emu-clause>
+
+    <emu-clause id="sec-publication-cadence">
+      <h1>Publication Cadence</h1>
+      <p>The registry is published on a semi-annual basis as an ECMA Technical Report. Changes approved at plenary meetings between publication cycles are available in the draft registry maintained in the WinterTC runtime-keys repository.</p>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-annex id="sec-machine-readable-registry">
+    <h1>Machine-Readable Registry Data</h1>
+    <p>The authoritative, machine-readable form of the runtime key registry is maintained as a JSON file: <code>runtime-keys.json</code>.</p>
+
+    <emu-annex id="sec-json-schema">
+      <h1>JSON Schema</h1>
+      <p>The registry JSON file conforms to the following structure:</p>
+      <pre><code class="language-json">{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Runtime Keys Registry",
+  "description": "A registry of runtime keys for JavaScript runtime environments",
+  "version": "1.0.0",
+  "lastModified": "YYYY-MM-DD",
+  "runtimes": [
+    {
+      "organization": "string (required)",
+      "name": "string (required)",
+      "key": "string (required)",
+      "description": "string (required)",
+      "website": "string | null (optional)",
+      "repository": "string | null (optional)",
+      "deprecated": "boolean (required, default: false)"
+    }
+  ]
+}</code></pre>
+    </emu-annex>
+
+    <emu-annex id="sec-accessing-registry">
+      <h1>Accessing the Registry</h1>
+      <p>The current machine-readable registry is available at:</p>
+      <ul>
+        <li>Draft version: <code>https://github.com/WinterTC55/runtime-keys/blob/main/runtime-keys.json</code></li>
+        <li>Published version: To be determined upon ECMA TR publication</li>
+      </ul>
+    </emu-annex>
+  </emu-annex>
+
+  <emu-annex id="sec-example-usage">
+    <h1>Example Usage</h1>
+    <p>This annex provides non-normative examples of how runtime keys may be used in practice.</p>
+
+    <emu-note>
+      <p>This specification does not prescribe how runtime keys should be used. The following examples are illustrative only.</p>
+    </emu-note>
+
+    <emu-annex id="sec-package-json-example">
+      <h1>Package.json Example</h1>
+      <p>A library package might use runtime keys in its <code>package.json</code> to specify conditional exports and runtime version requirements:</p>
+      <pre><code class="language-json">{
+  "name": "example-library",
+  "version": "1.0.0",
+  "exports": {
+    "node": "./dist/node/index.js",
+    "deno": "./dist/deno/index.js",
+    "bun": "./dist/bun/index.js",
+    "workerd": "./dist/workerd/index.js"
+  },
+  "engines": {
+    "node": ">=18",
+    "deno": ">=1.30",
+    "bun": ">=1.0"
+  }
+}</code></pre>
+    </emu-annex>
+
+    <emu-annex id="sec-configuration-example">
+      <h1>Configuration File Example</h1>
+      <p>A build tool or framework might use runtime keys to specify runtime-specific configuration:</p>
+      <pre><code class="language-json">{
+  "runtimes": {
+    "node": {
+      "outputDir": "./dist/node",
+      "target": "ES2022"
+    },
+    "deno": {
+      "outputDir": "./dist/deno",
+      "target": "ES2022"
+    },
+    "workerd": {
+      "outputDir": "./dist/workerd",
+      "target": "ES2022",
+      "polyfills": ["node:buffer"]
+    }
+  }
+}</code></pre>
+    </emu-annex>
+  </emu-annex>
+</body>
+</html>

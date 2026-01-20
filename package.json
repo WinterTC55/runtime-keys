@@ -1,0 +1,27 @@
+{
+	"name": "runtime-keys",
+	"description": "WinterTC55 Runtime Keys technical report",
+	"version": "1.0.0",
+	"private": "true",
+	"license": "",
+	"homepage": "",
+	"bugs": {
+		"url": "https://github.com/WinterTC55/runtime-keys/issues"
+	},
+	"author": {
+		"name": "Ethan Arrowood",
+		"email": "ethan@arrowood.dev",
+		"url": "https://ethanarrowood.com"
+	},
+	"contributors": [],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/WinterTC55/runtime-keys.git"
+	},
+	"scripts": {
+		"build": "ecmarkup spec.html out.html"
+	},
+	"devDependencies": {
+		"ecmarkup": "^22.0.0"
+	}
+}

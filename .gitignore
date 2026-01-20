@@ -1,2 +1,4 @@
 index.html
 .vercel
+node_modules/
+out.html
