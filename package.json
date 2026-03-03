@@ -19,7 +19,8 @@
 		"url": "https://github.com/WinterTC55/runtime-keys.git"
 	},
 	"scripts": {
-		"build": "ecmarkup spec.html out.html"
+		"build": "ecmarkup spec.html out.html",
+		"watch": "ecmarkup --watch --verbose --lint-spec spec.html out.html"
 	},
 	"devDependencies": {
 		"ecmarkup": "^22.0.0"
