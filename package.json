@@ -19,10 +19,11 @@
 		"url": "https://github.com/WinterTC55/runtime-keys.git"
 	},
 	"scripts": {
-		"build": "ecmarkup spec.html out.html",
-		"watch": "ecmarkup --watch --verbose --lint-spec spec.html out.html"
+		"build": "node build.mjs && ecmarkup spec-injected.html out.html",
+		"watch": "concurrently 'node --watch-path=./runtime-keys.json --watch-path=./spec.html build.mjs' 'ecmarkup --watch --verbose --lint-spec spec-injected.html out.html'"
 	},
 	"devDependencies": {
-		"ecmarkup": "^22.0.0"
+		"concurrently": "^9.2.1",
+		"ecmarkup": "^23.0.2"
 	}
 }
