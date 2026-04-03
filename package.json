@@ -23,7 +23,10 @@
 		"watch": "concurrently 'node --watch-path=./runtime-keys.json --watch-path=./spec.html build.mjs' 'ecmarkup --watch --verbose --lint-spec spec-injected.html out.html'"
 	},
 	"devDependencies": {
-		"concurrently": "^9.2.1",
-		"ecmarkup": "^23.0.2"
+		"concurrently": "9.2.1",
+		"ecmarkup": "24.1.0"
+	},
+	"engines": {
+		"node": ">= 24"
 	}
 }
