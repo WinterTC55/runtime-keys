@@ -15,7 +15,7 @@
 <body>
   <pre class="metadata">
   title: Runtime Keys
-  status: draft
+  status: draft-TR
   location: https://github.com/WinterTC55/runtime-keys
   contributors: WinterTC55
   </pre>
@@ -29,7 +29,7 @@
   <emu-clause id="sec-scope">
     <h1>Scope</h1>
 
-    <p>Runtime keys provide a consistent and predictable mechanism for identifying ECMAScript runtimes in a variety of contexts, including but not limited to project configuration files, package manifests, conditional exports, and runtime detection mechanisms. This document focusses on providing informative identifiers primarily for web servers, though other ECMAScript server environments may find it useful. These keys are not intended to be used in web browsers, which should be referenced by other mechanisms such as the browserslist project.</p>
+    <p>Runtime keys provide a consistent and predictable mechanism for identifying ECMAScript runtimes in a variety of contexts, including but not limited to project configuration files, package manifests, conditional exports, and runtime detection mechanisms. This document focuses on providing informative identifiers primarily for web servers, though other ECMAScript server environments may find it useful. These keys are not intended to be used in web browsers, which should be referenced by other mechanisms such as the browserslist project.</p>
     <p>This Report defines:</p>
     <ul>
       <li>the canonical source of runtime keys and associated metadata,</li>
@@ -53,7 +53,7 @@
 
     <emu-clause id="term-runtime">
       <h1><dfn variants="ECMAScript runtimes">ECMAScript runtime</dfn></h1>
-      <p>implementation of the ECMA-262 ECMAScript langauge specification</p>
+      <p>implementation of the ECMA-262 ECMAScript language specification</p>
     </emu-clause>
 
     <emu-clause id="term-runtime-key">
@@ -129,10 +129,10 @@
 
   <emu-clause id="sec-runtime-source">
     <h1>Canonical source for runtime keys</h1>
-    <p>The following table lists all previously recorded runtime keys, sorted alphabetically by organisation.</p>
+    <p>The following table lists runtime keys submitted to TC55 and reviewed by the Committee, sorted alphabetically by organisation.</p>
 
     <emu-note>
-      <p>This section is generated from the machine-readable source data (see <emu-xref href="#sec-machine-readable-source"></emu-xref>). In the build process, this content should be dynamically generated from <code>runtime-keys.json</code>.</p>
+      <p>This section is generated from the machine-readable source data (see <emu-xref href="#sec-machine-readable-source"></emu-xref>).</p>
     </emu-note>
 
     <emu-table id="table-runtime-keys" caption="Registered Runtime Keys">
@@ -159,16 +159,16 @@
 
     <emu-clause id="sec-adding-entries">
       <h1>Proposing new runtime key entries</h1>
-      <p>All ECMAScript runtimes are welcome to propose a key for inclusion in this Report, subject to the attributes specified in <emu-xref href="#sec-runtime-key-structure"></emu-xref>. Runtimes which contribute to this Report are encouraged, but not required, to participate in Ecma TC55.</p>
+      <p>All ECMAScript runtimes are welcome to propose a key for inclusion in this Report, subject to the structure as described in <emu-xref href="#sec-runtime-key-structure"></emu-xref>. Runtimes which contribute to this Report are encouraged, but not required, to participate in Ecma TC55.</p>
 
       <emu-clause id="sec-proposal-process">
         <h1>Proposal process</h1>
         <emu-alg>
-          1. The proposer creates a pull request in the <a href="https://github.com/WinterTC55/runtime-keys">runtime-keys repository</a>.
+          1. The proposer creates a pull request in the <a href="https://github.com/WinterTC55/runtime-keys">WinterTC55/runtime-keys GitHub repository</a>.
           1. The pull request adds the runtime entry to the machine-readable source data file (<code>runtime-keys.json</code>).
           1. The entry includes all mandatory metadata fields as described in <emu-xref href="#sec-runtime-metadata"></emu-xref>.
           1. The entry is inserted in alphabetical order by organisation.
-          1. [id="step-approval-process"] The pull request is reviewed by WinterTC participants.
+          1. [id="step-approval-process"] The pull request is reviewed by TC55 participants.
           1. At least two delegates within TC55 not directly affiliated with the proposed runtime approve the pull request.
           1. The pull request is formally approved at a TC55 plenary meeting before merging.
           1. After plenary approval, designated editors merge the pull request and update the current draft Report.
@@ -226,7 +226,7 @@
     </emu-clause>
   </emu-clause>
 
-  <emu-annex id="sec-machine-readable-source">
+  <emu-annex id="sec-machine-readable-source" normative>
     <h1>Machine-readable canonical source</h1>
     <p>The authoritative, machine-readable form of the runtime key source is maintained as a JSON file: <a href="https://github.com/WinterTC55/runtime-keys/blob/main/runtime-keys.json"><code>runtime-keys.json</code></a>.</p>
 
@@ -258,14 +258,14 @@
       <p>The current machine-readable source is available at:</p>
       <ul>
         <li>Draft version: <code>https://github.com/WinterTC55/runtime-keys/blob/main/runtime-keys.json</code></li>
-        <li>Published version: To be determined upon ECMA TR publication</li>
+        <li>Published version: To be determined upon Ecma TR publication</li>
       </ul>
     </emu-annex>
   </emu-annex>
 
   <emu-annex id="sec-example-usage">
     <h1>Example usage</h1>
-    <p>This annex provides non-normative examples of how runtime keys may be used in practice.</p>
+    <p>This Annex provides informative examples of how runtime keys may be used in practice.</p>
 
     <emu-note>
       <p>This specification does not prescribe how runtime keys should be used. The following examples are illustrative only.</p>
