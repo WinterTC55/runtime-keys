@@ -42,6 +42,15 @@
       "deprecated": false
     },
     {
+      "organization": "Convex",
+      "name": "Convex Runtime",
+      "key": "convex",
+      "description": "The JavaScript runtime used to execute deterministic Query and Mutation Functions as well as nondeterministic Action Functions in the Convex backend platform.",
+      "website": "https://docs.convex.dev/functions/runtimes#default-convex-runtime",
+      "repository": "https://github.com/get-convex/convex-backend",
+      "deprecated": false
+    },
+    {
       "organization": "Deno Land",
       "name": "Deno",
       "key": "deno",
@@ -57,6 +66,24 @@
       "description": "JavaScript runtime for Fastly Compute@Edge.",
       "website": "https://developer.fastly.com/learning/compute/javascript/",
       "repository": "https://github.com/fastly/js-compute-runtime",
+      "deprecated": false
+    },
+    {
+      "organization": "Fabrice Bellard",
+      "name": "QuickJS",
+      "key": "quickjs",
+      "description": "QuickJS is a small and embeddable Javascript engine.",
+      "website": "https://bellard.org/quickjs/",
+      "repository": "https://github.com/bellard/quickjs",
+      "deprecated": false
+    },
+    {
+      "organization": "QuickJS-NG",
+      "name": "QuickJS-NG",
+      "key": "quickjs-ng",
+      "description": "A fork of the original QuickJS project by Fabrice Bellard and Charlie Gordon.",
+      "website": "https://quickjs-ng.github.io/quickjs/",
+      "repository": "https://github.com/quickjs-ng/quickjs",
       "deprecated": false
     },
     {
@@ -84,6 +111,15 @@
       "description": "A framework for building native apps using React. This key represents supported React Native JS runtimes on native platforms (excludes react-native-web).",
       "website": "https://reactnative.dev/",
       "repository": "https://github.com/facebook/react-native",
+      "deprecated": false
+    },
+    {
+      "organization": "Mozilla",
+      "name": "Rhino",
+      "key": "rhino",
+      "description": "Rhino is an open-source implementation of JavaScript written entirely in Java.",
+      "website": "https://rhino.github.io/",
+      "repository": "https://github.com/mozilla/rhino",
       "deprecated": false
     },
     {
