@@ -16,15 +16,23 @@ function escapeHtml(str) {
 		.replace(/"/g, "&quot;");
 }
 
+function links(runtimeKey) {
+	let str = '';
+	if (runtimeKey.website) {
+		str += `<br><a href="${escapeHtml(runtimeKey.website)}">Website</a>`
+	}
+	if (runtimeKey.repository) {
+		str += `<br><a href="${escapeHtml(runtimeKey.repository)}">Repository</a>`
+	}
+	return str;
+}
+
 const rows = runtimes
 // intentional whitespace so output is human readable
 	.map((r) => `          <tr>
-            <td>${escapeHtml(r.organization)}</td>
-            <td>${escapeHtml(r.name)}</td>
             <td><code>${escapeHtml(r.key)}</code></td>
-            <td>${escapeHtml(r.description)}</td>
-            <td>${r.website ? `<a href="${escapeHtml(r.website)}">Website</a>` : "-"}</td>
-            <td>${r.repository ? `<a href="${escapeHtml(r.repository)}">Repository</a>` : "-"}</td>
+            <td>${escapeHtml(r.organization)} / ${escapeHtml(r.name)}</td>
+            <td>${escapeHtml(r.description)}${links(r)}</td>
           </tr>`
 	)
 	.join("\n");
