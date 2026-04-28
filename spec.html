@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB-oxendict">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
-  <script src="https://tc39.es/ecmarkup/js/menu.js"></script>
-  <link rel="stylesheet" href="https://tc39.es/ecmarkup/css/elements.css">
   <title>Runtime Keys</title>
-  <style>
-    pre code { white-space: pre; }
+  <style media="print">
+    /* Styles specific to the June 2026 edition of this TR—analyse and update in subsequent editions */
+    #sec-configuration-example {
+      break-before: page;
+    }
   </style>
 </head>
 <body>
   <pre class="metadata">
-  title: Runtime Keys
-  status: draft-TR
+  title: Runtime keys
+  shortname: ECMA TR/ZZZ
+  status: draft-tr
+  date: 2026-04-28
+  committee: 55
   location: https://github.com/WinterTC55/runtime-keys
   contributors: WinterTC55
+  boilerplate:
+    copyright: alternative
   </pre>
 
   <emu-intro id="sec-intro">
@@ -67,7 +70,7 @@
 
     <emu-clause id="sec-key-format">
       <h1>Key format</h1>
-      <p>A runtime key satisfies all of the following:</p>
+      <p>A runtime key satisfies all the following:</p>
       <ul>
         <li>It is a string value.</li>
         <li>It is usable in common configuration formats such as JSON and YAML.</li>
@@ -116,7 +119,7 @@
       <h1>Runtime metadata</h1>
       <p>Each runtime key entry includes the following metadata:</p>
       <ul>
-        <li><strong>Organization</strong> (required): The organisation or individual responsible for the runtime</li>
+        <li><strong>Organization</strong> (required): The organization or individual responsible for the runtime</li>
         <li><strong>Name</strong> (required): The human-readable name of the runtime</li>
         <li><strong>Key</strong> (required): The unique string identifier</li>
         <li><strong>Description</strong> (required): A brief description of the runtime</li>
@@ -129,7 +132,7 @@
 
   <emu-clause id="sec-runtime-source">
     <h1>Canonical source for runtime keys</h1>
-    <p>The following table lists runtime keys submitted to TC55 and reviewed by the Committee, sorted alphabetically by organisation.</p>
+    <p>The following table lists runtime keys submitted to TC55 and reviewed by the Committee, sorted alphabetically by organization.</p>
 
     <emu-note>
       <p>This section is generated from the machine-readable source data (see <emu-xref href="#sec-machine-readable-source"></emu-xref>).</p>
@@ -190,7 +193,7 @@
 
       <emu-clause id="sec-metadata-modification">
         <h1>Metadata modification</h1>
-        <p>Modifications to runtime metadata (organisation, name, description, website, or repository) follow the same process as adding entries:</p>
+        <p>Modifications to runtime metadata (organization, name, description, website, or repository) follow the same process as adding entries:</p>
         <emu-alg>
           1. The proposer creates a pull request modifying the entry in <code>runtime-keys.json</code>.
           1. The proposal continues as described starting at step <emu-xref href="#step-approval-process"></emu-xref> in the approval process.
@@ -312,12 +315,12 @@
     </emu-annex>
   </emu-annex>
 
-<emu-annex id="sec-biblio" back-matter>
-  <h1>Bibliography</h1>
-  <p>
-    ECMA-262, <i>ECMAScript&reg; Language Specification</i><br />
-    <a href="https://tc39.es/ecma262/multipage/">https://tc39.es/ecma262/multipage/</a>
-  </p>
-</emu-annex>
+  <emu-annex id="sec-biblio" back-matter>
+    <h1>Bibliography</h1>
+    <p>
+      ECMA-262, <i>ECMAScript&reg; Language Specification</i><br />
+      <a href="https://tc39.es/ecma262/multipage/">https://tc39.es/ecma262/multipage/</a>
+    </p>
+  </emu-annex>
 </body>
 </html>

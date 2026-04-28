@@ -19,9 +19,13 @@
 		"url": "https://github.com/WinterTC55/runtime-keys.git"
 	},
 	"scripts": {
-		"build": "node build.mjs && ecmarkup spec-injected.html out.html",
-		"watch": "concurrently 'node --watch-path=./runtime-keys.json --watch-path=./spec.html build.mjs' 'ecmarkup --watch --verbose --lint-spec spec-injected.html out.html'"
-	},
+    "prebuild": "rm -rf out && mkdir -p out",
+		"build": "node build.mjs && ecmarkup spec-injected.html out/index.html",
+		"watch": "concurrently 'node --watch-path=./runtime-keys.json --watch-path=./spec.html build.mjs' 'ecmarkup --watch --verbose --lint-spec spec-injected.html out/index.html'",
+		"web": "npm run build -- --assets external --assets-dir out",
+    "printable": "npm run web -- --verbose --printable --lint-spec",
+    "pdf": "npm run printable && prince-books --script ./node_modules/ecmarkup/js/print.js out/index.html -o out/TR-runtime-keys.pdf"
+  },
 	"devDependencies": {
 		"concurrently": "9.2.1",
 		"ecmarkup": "24.1.0"
