@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+  <script src="https://tc39.es/ecmarkup/js/menu.js"></script>
+  <link rel="stylesheet" href="https://tc39.es/ecmarkup/css/elements.css">
+  <title>Runtime Keys</title>
+  <style>
+    pre code { white-space: pre; }
+  </style>
+</head>
+<body>
+  <pre class="metadata">
+  title: Runtime Keys
+  status: draft-TR
+  location: https://github.com/WinterTC55/runtime-keys
+  contributors: WinterTC55
+  </pre>
+
+  <emu-intro id="sec-intro">
+    <h1>Introduction</h1>
+
+    <p>This Technical Report defines a canonical source for identifiers of unique ECMAScript runtime environments, known as <em>runtime keys</em>.</p>
+  </emu-intro>
+
+  <emu-clause id="sec-scope">
+    <h1>Scope</h1>
+
+    <p>Runtime keys provide a consistent and predictable mechanism for identifying ECMAScript runtimes in a variety of contexts, including but not limited to project configuration files, package manifests, conditional exports, and runtime detection mechanisms. This document focuses on providing informative identifiers primarily for web servers, though other ECMAScript server environments may find it useful. These keys are not intended to be used in web browsers, which should be referenced by other mechanisms such as the browserslist project.</p>
+    <p>This Report defines:</p>
+    <ul>
+      <li>the canonical source of runtime keys and associated metadata,</li>
+      <li>guidance for future ECMAScript runtimes to submit runtime keys, and</li>
+      <li>TC55's governance process for adding and modifying runtime keys to the Report.</li>
+    </ul>
+
+    <emu-note>
+      <p>This Report does not define <em>how</em> runtime keys should be used by tools or libraries. The purpose of this Report is to prevent conflicts and provide a reliable, authoritative source of runtime identifiers.</p>
+    </emu-note>
+
+    <emu-note>
+      <p>Inclusion in this Report does not imply that the specified runtime is fully conformant with any Ecma specification, including the WinterTC Minimum Common API. Inclusion does not imply endorsement of any kind.</p>
+    </emu-note>
+  </emu-clause>
+
+  <emu-clause id="sec-terms-and-definitions">
+    <h1>Terms and definitions</h1>
+
+    <p>For the purposes of this document, the following terms and definitions apply.</p>
+
+    <emu-clause id="term-runtime">
+      <h1><dfn variants="ECMAScript runtimes">ECMAScript runtime</dfn></h1>
+      <p>implementation of the ECMA-262 ECMAScript language specification</p>
+    </emu-clause>
+
+    <emu-clause id="term-runtime-key">
+      <h1><dfn variants="runtime keys,Runtime keys">runtime key</dfn></h1>
+      <p>unique string identifier that represents a specific ECMAScript runtime environment</p>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-clause id="sec-runtime-key-structure">
+    <h1>Runtime key structure</h1>
+
+    <emu-clause id="sec-key-format">
+      <h1>Key format</h1>
+      <p>A runtime key satisfies all of the following:</p>
+      <ul>
+        <li>It is a string value.</li>
+        <li>It is usable in common configuration formats such as JSON and YAML.</li>
+        <li>It meaningfully represents the associated runtime environment.</li>
+        <li>It is simple and unambiguous.</li>
+      </ul>
+
+      <emu-note>
+        <p>Future versions of this Report may define a formal grammar for allowable characters in runtime keys.</p>
+      </emu-note>
+    </emu-clause>
+
+    <emu-clause id="sec-key-uniqueness">
+      <h1>Key uniqueness</h1>
+      <p>A runtime key included in this Report will not conflict with the following:</p>
+      <ul>
+        <li>any other existing runtime key in this Report, or</li>
+        <li>
+          any existing Browserslist <a href="https://github.com/browserslist/browserslist?tab=readme-ov-file#browsers"><em>browser</em></a> entries.
+          <emu-note>This explicitly excludes references to <em>server</em> runtimes within Browserslist.</emu-note>
+        </li>
+      </ul>
+    </emu-clause>
+
+    <emu-clause id="sec-key-naming-guidelines">
+      <h1>Key naming guidelines</h1>
+      <p>Runtime keys are subject to expert review by TC55. Acceptable keys will:</p>
+      <ul>
+        <li>avoid being too similar to existing keys,</li>
+        <li>avoid similarity to common English words or offensive terms,</li>
+        <li>avoid being too generic or similar to general terminology such as "Web Runtimes", "Edge Runtimes", or "JavaScript Runtimes", and</li>
+        <li>demonstrate reasonable specificity and clarity.</li>
+      </ul>
+    </emu-clause>
+
+    <emu-clause id="sec-runtime-existence">
+      <h1>Runtime existence validation</h1>
+      <p>The runtime environment represented by a key must actually exist, whether as open source, source-available, or proprietary software. Entries in this Report exist to identify real runtimes, not to reserve names for future projects.</p>
+
+      <emu-note>
+        <p>A runtime should demonstrate "proof of use" before being added to the Report. Examples include usage in package.json exports fields, published documentation, or active community adoption.</p>
+      </emu-note>
+    </emu-clause>
+
+    <emu-clause id="sec-runtime-metadata">
+      <h1>Runtime metadata</h1>
+      <p>Each runtime key entry includes the following metadata:</p>
+      <ul>
+        <li><strong>Organization</strong> (required): The organisation or individual responsible for the runtime</li>
+        <li><strong>Name</strong> (required): The human-readable name of the runtime</li>
+        <li><strong>Key</strong> (required): The unique string identifier</li>
+        <li><strong>Description</strong> (required): A brief description of the runtime</li>
+        <li><strong>Website</strong> (optional): The primary website for the runtime</li>
+        <li><strong>Repository</strong> (optional): The source code repository URL, if available</li>
+        <li><strong>Deprecated</strong> (required): A boolean indicating whether the key is deprecated</li>
+      </ul>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-clause id="sec-runtime-source">
+    <h1>Canonical source for runtime keys</h1>
+    <p>The following table lists runtime keys submitted to TC55 and reviewed by the Committee, sorted alphabetically by organisation.</p>
+
+    <emu-note>
+      <p>This section is generated from the machine-readable source data (see <emu-xref href="#sec-machine-readable-source"></emu-xref>).</p>
+    </emu-note>
+
+    <emu-table id="table-runtime-keys" caption="Registered Runtime Keys">
+      <table>
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Organization / Name</th>
+            <th>Description, Website, Repository</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- RUNTIME_KEYS_ROWS -->
+        </tbody>
+      </table>
+    </emu-table>
+  </emu-clause>
+
+  <emu-clause id="sec-governance">
+    <h1>Governance and modification process</h1>
+
+    <emu-clause id="sec-adding-entries">
+      <h1>Proposing new runtime key entries</h1>
+      <p>All ECMAScript runtimes are welcome to propose a key for inclusion in this Report, subject to the structure as described in <emu-xref href="#sec-runtime-key-structure"></emu-xref>. Runtimes which contribute to this Report are encouraged, but not required, to participate in Ecma TC55.</p>
+
+      <emu-clause id="sec-proposal-process">
+        <h1>Proposal process</h1>
+        <emu-alg>
+          1. The proposer creates a pull request in the <a href="https://github.com/WinterTC55/runtime-keys">WinterTC55/runtime-keys GitHub repository</a>.
+          1. The pull request adds the runtime entry to the machine-readable source data file (<code>runtime-keys.json</code>).
+          1. The entry includes all mandatory metadata fields as described in <emu-xref href="#sec-runtime-metadata"></emu-xref>.
+          1. The entry is inserted in alphabetical order by key.
+          1. [id="step-approval-process"] The pull request is reviewed by TC55 participants.
+          1. At least two delegates within TC55 not directly affiliated with the proposed runtime approve the pull request.
+          1. The pull request is formally approved at a TC55 plenary meeting before merging.
+          1. After plenary approval, designated editors merge the pull request and update the current draft Report.
+        </emu-alg>
+      </emu-clause>
+
+      <emu-clause id="sec-expert-review">
+        <h1>Expert review</h1>
+        <p>All proposed entries undergo expert review to ensure compliance with the naming guidelines specified in <emu-xref href="#sec-key-naming-guidelines"></emu-xref> and other expectations. Reviewers evaluate whether:</p>
+        <ul>
+          <li>the proposed key is appropriately specific and non-generic,</li>
+          <li>the runtime has demonstrated proof of use or adoption,</li>
+          <li>the key does not conflict with existing entries or Browserslist identifiers, and</li>
+          <li>the metadata is complete and accurate.</li>
+        </ul>
+        <p>TC55 may reject a runtime key submission for any reason, including those not enumerated in the above sections. In such a scenario, the Committee will provide that reason and information on how to resolve any issue.</p>
+      </emu-clause>
+    </emu-clause>
+
+    <emu-clause id="sec-modifying-entries">
+      <h1>Modifying entries</h1>
+
+      <emu-clause id="sec-metadata-modification">
+        <h1>Metadata modification</h1>
+        <p>Modifications to runtime metadata (organisation, name, description, website, or repository) follow the same process as adding entries:</p>
+        <emu-alg>
+          1. The proposer creates a pull request modifying the entry in <code>runtime-keys.json</code>.
+          1. The proposal continues as described starting at step <emu-xref href="#step-approval-process"></emu-xref> in the approval process.
+        </emu-alg>
+      </emu-clause>
+
+      <emu-clause id="sec-key-immutability">
+        <h1>Key immutability</h1>
+        <p>To prevent breaking existing tools and configurations that depend on runtime keys, <strong>runtime keys are immutable</strong> and will not be modified except in extraordinary circumstances requiring plenary consensus.</p>
+      </emu-clause>
+
+      <emu-clause id="sec-deprecation">
+        <h1>Deprecation</h1>
+        <p>Runtime keys may be deprecated to indicate that a runtime project is inactive or discontinued. To deprecate a key:</p>
+        <emu-alg>
+          1. The proposer creates a pull request setting the `deprecated` field to `true` in <code>runtime-keys.json</code>.
+          1. The proposal continues as described starting at step <emu-xref href="#step-approval-process"></emu-xref> in the approval process.
+        </emu-alg>
+
+        <p>Deprecated keys may be undeprecated if the original runtime project resumes activity, following the same approval process. Implementations should not add support for deprecated keys.</p>
+
+        <emu-note>
+          <p>Deprecated keys remain in the Report to preserve historical information and prevent reuse that could cause confusion.</p>
+        </emu-note>
+      </emu-clause>
+    </emu-clause>
+
+    <emu-clause id="sec-publication-cadence">
+      <h1>Publication cadence</h1>
+      <p>This Report is published on a semi-annual basis as an ECMA Technical Report at <a href="https://runtime-keys.proposal.wintercg.org/">https://runtime-keys.proposal.wintercg.org/</a>. Changes approved at TC55 plenary meetings between publication cycles can be found in the publicly-available draft maintained in the WinterTC runtime-keys repository.</p>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-annex id="sec-machine-readable-source" normative>
+    <h1>Machine-readable canonical source</h1>
+    <p>The authoritative, machine-readable form of the runtime key source is maintained as a JSON file: <a href="https://github.com/WinterTC55/runtime-keys/blob/main/runtime-keys.json"><code>runtime-keys.json</code></a>.</p>
+
+    <emu-annex id="sec-json-schema">
+      <h1>JSON schema</h1>
+      <p>The runtime keys source data JSON file conforms to the following structure:</p>
+      <pre><code class="language-json">{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Runtime Keys",
+  "description": "A collection of runtime keys for ECMAScript runtime environments",
+  "version": "1.0.0",
+  "lastModified": "YYYY-MM-DD",
+  "runtimes": [
+    {
+      "organization": "string (required)",
+      "name": "string (required)",
+      "key": "string (required)",
+      "description": "string (required)",
+      "website": "string | null (optional)",
+      "repository": "string | null (optional)",
+      "deprecated": "boolean (required, default: false)"
+    }
+  ]
+}</code></pre>
+    </emu-annex>
+
+    <emu-annex id="sec-accessing-source">
+      <h1>Accessing the source data</h1>
+      <p>The current machine-readable source is available at:</p>
+      <ul>
+        <li>Draft version: <code>https://github.com/WinterTC55/runtime-keys/blob/main/runtime-keys.json</code></li>
+        <li>Published version: To be determined upon Ecma TR publication</li>
+      </ul>
+    </emu-annex>
+  </emu-annex>
+
+  <emu-annex id="sec-example-usage">
+    <h1>Example usage</h1>
+    <p>This Annex provides informative examples of how runtime keys may be used in practice.</p>
+
+    <emu-note>
+      <p>This specification does not prescribe how runtime keys should be used. The following examples are illustrative only.</p>
+    </emu-note>
+
+    <emu-annex id="sec-package-json-example">
+      <h1>package.json example</h1>
+      <p>A library package might use runtime keys in its <code>package.json</code> to specify conditional exports and runtime version requirements:</p>
+      <pre><code class="language-json">{
+  "name": "example-library",
+  "version": "1.0.0",
+  "exports": {
+    "node": "./dist/node/index.js",
+    "deno": "./dist/deno/index.js",
+    "bun": "./dist/bun/index.js",
+    "workerd": "./dist/workerd/index.js"
+  },
+  "engines": {
+    "node": ">=18",
+    "deno": ">=1.30",
+    "bun": ">=1.0"
+  }
+}</code></pre>
+    </emu-annex>
+
+    <emu-annex id="sec-configuration-example">
+      <h1>Configuration File Example</h1>
+      <p>A build tool or framework might use runtime keys to specify runtime-specific configuration:</p>
+      <pre><code class="language-json">{
+  "runtimes": {
+    "node": {
+      "outputDir": "./dist/node",
+      "target": "ES2022"
+    },
+    "deno": {
+      "outputDir": "./dist/deno",
+      "target": "ES2022"
+    },
+    "workerd": {
+      "outputDir": "./dist/workerd",
+      "target": "ES2022",
+      "polyfills": ["node:buffer"]
+    }
+  }
+}</code></pre>
+    </emu-annex>
+  </emu-annex>
+
+<emu-annex id="sec-biblio" back-matter>
+  <h1>Bibliography</h1>
+  <p>
+    ECMA-262, <i>ECMAScript&reg; Language Specification</i><br />
+    <a href="https://tc39.es/ecma262/multipage/">https://tc39.es/ecma262/multipage/</a>
+  </p>
+</emu-annex>
+</body>
+</html>
