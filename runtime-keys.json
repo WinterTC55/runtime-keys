@@ -6,12 +6,12 @@
   "lastModified": "2026-01-20",
   "runtimes": [
     {
-      "organization": "Alibaba Cloud",
-      "name": "edge-routine",
-      "key": "edge-routine",
-      "description": "The JavaScript/Webassembly runtime that powers Alibaba Cloud edge-routine.",
-      "website": "https://www.alibabacloud.com/help/en/dynamic-route-for-cdn/latest/er-overview",
-      "repository": null,
+      "organization": "Andromeda",
+      "name": "Andromeda",
+      "key": "andromeda",
+      "description": "A modern, and secure JavaScript & TypeScript runtime built in Rust, powered by the Nova engine and Oxc. Provides zero-config TypeScript, rich Web APIs (Canvas, Web Crypto, Storage, HTTP, SQLite), and aims for WinterTC compliance.",
+      "website": "https://tryandromeda.dev",
+      "repository": "https://github.com/tryandromeda/andromeda",
       "deprecated": false
     },
     {
@@ -33,12 +33,12 @@
       "deprecated": false
     },
     {
-      "organization": "Cloudflare",
-      "name": "workerd",
-      "key": "workerd",
-      "description": "The JavaScript / WebAssembly runtime that powers Cloudflare Workers.",
-      "website": "https://workers.cloudflare.com/",
-      "repository": "https://github.com/cloudflare/workerd",
+      "organization": "Oven",
+      "name": "Bun",
+      "key": "bun",
+      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.",
+      "website": "https://bun.sh/",
+      "repository": "https://github.com/oven-sh/bun",
       "deprecated": false
     },
     {
@@ -60,30 +60,39 @@
       "deprecated": false
     },
     {
+      "organization": "Vercel",
+      "name": "Edge Light",
+      "key": "edge-light",
+      "description": "Developing, testing, and defining the runtime Web APIs for Edge infrastructure.",
+      "website": "https://edge-runtime.vercel.app/",
+      "repository": "https://github.com/vercel/edge-runtime",
+      "deprecated": false
+    },
+    {
+      "organization": "Alibaba Cloud",
+      "name": "edge-routine",
+      "key": "edge-routine",
+      "description": "The JavaScript/Webassembly runtime that powers Alibaba Cloud edge-routine.",
+      "website": "https://www.alibabacloud.com/help/en/dynamic-route-for-cdn/latest/er-overview",
+      "repository": null,
+      "deprecated": false
+    },
+    {
+      "organization": "OpenJS Foundation",
+      "name": "Electron",
+      "key": "electron",
+      "description": "Build cross-platform desktop apps with JavaScript, HTML, and CSS.",
+      "website": "https://www.electronjs.org/",
+      "repository": "https://github.com/electron/electron",
+      "deprecated": false
+    },
+    {
       "organization": "Fastly",
       "name": "JavaScript on Compute@Edge",
       "key": "fastly",
       "description": "JavaScript runtime for Fastly Compute@Edge.",
       "website": "https://developer.fastly.com/learning/compute/javascript/",
       "repository": "https://github.com/fastly/js-compute-runtime",
-      "deprecated": false
-    },
-    {
-      "organization": "Fabrice Bellard",
-      "name": "QuickJS",
-      "key": "quickjs",
-      "description": "QuickJS is a small and embeddable Javascript engine.",
-      "website": "https://bellard.org/quickjs/",
-      "repository": "https://github.com/bellard/quickjs",
-      "deprecated": false
-    },
-    {
-      "organization": "QuickJS-NG",
-      "name": "QuickJS-NG",
-      "key": "quickjs-ng",
-      "description": "A fork of the original QuickJS project by Fabrice Bellard and Charlie Gordon.",
-      "website": "https://quickjs-ng.github.io/quickjs/",
-      "repository": "https://github.com/quickjs-ng/quickjs",
       "deprecated": false
     },
     {
@@ -102,24 +111,6 @@
       "description": "Lagon is an open-source runtime and platform that allows developers to run TypeScript and JavaScript Functions at the Edge.",
       "website": "https://lagon.app",
       "repository": "https://github.com/lagonapp/lagon",
-      "deprecated": false
-    },
-    {
-      "organization": "Meta",
-      "name": "React Native",
-      "key": "react-native",
-      "description": "A framework for building native apps using React. This key represents supported React Native JS runtimes on native platforms (excludes react-native-web).",
-      "website": "https://reactnative.dev/",
-      "repository": "https://github.com/facebook/react-native",
-      "deprecated": false
-    },
-    {
-      "organization": "Mozilla",
-      "name": "Rhino",
-      "key": "rhino",
-      "description": "Rhino is an open-source implementation of JavaScript written entirely in Java.",
-      "website": "https://rhino.github.io/",
-      "repository": "https://github.com/mozilla/rhino",
       "deprecated": false
     },
     {
@@ -142,15 +133,6 @@
     },
     {
       "organization": "OpenJS Foundation",
-      "name": "Electron",
-      "key": "electron",
-      "description": "Build cross-platform desktop apps with JavaScript, HTML, and CSS.",
-      "website": "https://www.electronjs.org/",
-      "repository": "https://github.com/electron/electron",
-      "deprecated": false
-    },
-    {
-      "organization": "OpenJS Foundation",
       "name": "Node.js",
       "key": "node",
       "description": "Node.js is an open-source, cross-platform JavaScript runtime environment.",
@@ -159,12 +141,39 @@
       "deprecated": false
     },
     {
-      "organization": "Oven",
-      "name": "Bun",
-      "key": "bun",
-      "description": "Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.",
-      "website": "https://bun.sh/",
-      "repository": "https://github.com/oven-sh/bun",
+      "organization": "Fabrice Bellard",
+      "name": "QuickJS",
+      "key": "quickjs",
+      "description": "QuickJS is a small and embeddable Javascript engine.",
+      "website": "https://bellard.org/quickjs/",
+      "repository": "https://github.com/bellard/quickjs",
+      "deprecated": false
+    },
+    {
+      "organization": "QuickJS-NG",
+      "name": "QuickJS-NG",
+      "key": "quickjs-ng",
+      "description": "A fork of the original QuickJS project by Fabrice Bellard and Charlie Gordon.",
+      "website": "https://quickjs-ng.github.io/quickjs/",
+      "repository": "https://github.com/quickjs-ng/quickjs",
+      "deprecated": false
+    },
+    {
+      "organization": "Distributive",
+      "name": "PythonMonkey",
+      "key": "pythonmonkey",
+      "description": "Mozilla JS engine embedded into a Python host environment with cross-platform datatypes and event loop.",
+      "website": "https://pythonmonkey.io",
+      "repository": "https://github.com/Distributive-Network/PythonMonkey",
+      "deprecated": false
+    },
+    {
+      "organization": "Meta",
+      "name": "React Native",
+      "key": "react-native",
+      "description": "A framework for building native apps using React. This key represents supported React Native JS runtimes on native platforms (excludes react-native-web).",
+      "website": "https://reactnative.dev/",
+      "repository": "https://github.com/facebook/react-native",
       "deprecated": false
     },
     {
@@ -177,12 +186,12 @@
       "deprecated": false
     },
     {
-      "organization": "Vercel",
-      "name": "Edge Light",
-      "key": "edge-light",
-      "description": "Developing, testing, and defining the runtime Web APIs for Edge infrastructure.",
-      "website": "https://edge-runtime.vercel.app/",
-      "repository": "https://github.com/vercel/edge-runtime",
+      "organization": "Mozilla",
+      "name": "Rhino",
+      "key": "rhino",
+      "description": "Rhino is an open-source implementation of JavaScript written entirely in Java.",
+      "website": "https://rhino.github.io/",
+      "repository": "https://github.com/mozilla/rhino",
       "deprecated": false
     },
     {
@@ -192,6 +201,15 @@
       "description": "The JavaScript runtime that brings JavaScript to Wasmer Edge.",
       "website": "https://wasmer.io/products/edge",
       "repository": "https://github.com/wasmerio/winterjs",
+      "deprecated": false
+    },
+    {
+      "organization": "Cloudflare",
+      "name": "workerd",
+      "key": "workerd",
+      "description": "The JavaScript / WebAssembly runtime that powers Cloudflare Workers.",
+      "website": "https://workers.cloudflare.com/",
+      "repository": "https://github.com/cloudflare/workerd",
       "deprecated": false
     }
   ]
