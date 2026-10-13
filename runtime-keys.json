@@ -57,7 +57,7 @@
       "description": "A modern runtime for JavaScript and TypeScript.",
       "website": "https://deno.com",
       "repository": "https://github.com/denoland/deno",
-      "deprecated": false
+      "deprecated": true
     },
     {
       "organization": "Vercel",
