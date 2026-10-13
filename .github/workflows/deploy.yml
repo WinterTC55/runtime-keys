@@ -23,10 +23,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Upload `out` to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: "wintercg-runtime-keys"
-          entrypoint: "https://deno.land/std@0.134.0/http/file_server.ts"
-          root: out/
