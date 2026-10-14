@@ -114,6 +114,15 @@
       "deprecated": false
     },
     {
+      "organization": "Amazon Web Services",
+      "name": "LLRT",
+      "key": "llrt",
+      "description": "A lightweight JavaScript runtime built in Rust on QuickJS, designed for fast startup and low latency in serverless applications such as AWS Lambda.",
+      "website": "https://github.com/awslabs/llrt",
+      "repository": "https://github.com/awslabs/llrt",
+      "deprecated": false
+    },
+    {
       "organization": "Moddable",
       "name": "Moddable SDK",
       "key": "moddable",
